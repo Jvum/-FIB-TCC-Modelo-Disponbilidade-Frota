@@ -17,7 +17,7 @@ class Disponibilidade:
         response = self.loaded_model.predict(disp)
         probs = self.loaded_model.predict_proba(disp)
         probs = probs.round(2)
-        print(probs[:, 0])
+        print(probs)
         data_set = {"chance_Ativa": str(probs[:, 0]), "chance_Inativa": str(probs[:, 1])}
         response = json.dumps(data_set)
         print(response)
